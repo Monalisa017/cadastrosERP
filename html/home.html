@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastros Básicos</title>
-    <link rel="stylesheet" type="text/css" href="./../../CadastrosERP/css/home.css">
+    <title>Cards com HTML e CSS</title>
+    <link rel="stylesheet" href="../../CadastrosERP/css/home.css">
 </head>
-<body class="corpo">
 
-<div class="container">
-    <header>
-        <h1>Pessoa fisíca</h1>
-    </header>
-    
-    <form action="/submit-your-form-endpoint" method="POST">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="password">Senha:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <input type="submit" value="Enviar">
-    </form>
-</div>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="../assets/imagens/dadosPessoais.png" alt="Imagem 1" class="card-img">
+            <div class="card-content">
+                <h3>Pessoa física</h3>
+                <p>Cadastro de dados pessoais.</p>
+                <a href="#">Link do Card 1</a>
+            </div>
+        </div>
 
+        <div class="card">
+            <img src="../assets/imagens/pessoaJuridica.png" alt="Imagem 2" class="card-img">
+            <div class="card-content">
+                <h3>Pessoa jurídica</h3>
+                <p>Cadastro de CNPJ</p>
+                <a href="#">Link do Card 2</a>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <img src="../assets/imagens/endereco.png" alt="Imagem 2" class="card-img">
+            <div class="card-content">
+                <h3>Endereço</h3>
+                <p>Cadastro de endereço</p>
+                <a href="#">Link do Card 2</a>
+            </div>
+        </div>
 </body>
 
 </html>
-
