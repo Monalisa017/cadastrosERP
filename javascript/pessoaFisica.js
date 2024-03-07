@@ -21,6 +21,19 @@ document.getElementById('cpf').addEventListener('input', function (e) {
     e.target.value = valor;
 });
 
+  
+function showToast() {
+    var toast = document.getElementById("toast");
+    toast.textContent = "Usuário adicionado com sucesso!";
+    toast.classList.add("show");
+    setTimeout(function(){
+      toast.classList.remove("show");
+    }, 5000);
+    setTimeout(function(){
+    window.location.href = "usuarios.html";
+      }, 3000);
+        
+  }
 
 // Simula um "Banco de Dados" com localStorage
 class UserDB {
@@ -33,7 +46,7 @@ class UserDB {
         let users = JSON.parse(localStorage.getItem(this.key)) || [];
         users.push(user);
         localStorage.setItem(this.key, JSON.stringify(users));
-        window.location.href = "usuarios.html"
+        showToast();
     }
 
     // Lê todos os usuários
@@ -76,12 +89,16 @@ document.getElementById("btnEnviar").onclick = function enviarRegistro() {
     const email = document.getElementById("email").value;
     const telefone = document.getElementById("telefone").value;
 
-    const usuario = { id: generateNextId(), nome: nome, dataNascimento: dataNascimento, rg: rg, cpf: cpf, email: email, telefone: telefone }
+    if(!nome || !dataNascimento || !rg || !cpf || !email || !telefone){
+        alert("Para prosseguir preencha corretamente todos os seus dados!")
+    }else{
+        const usuario = { id: generateNextId(), nome: nome, dataNascimento: dataNascimento, rg: rg, cpf: cpf, email: email, telefone: telefone }
     // Criar usuários
     db.createUser(usuario);
 
     // Ler usuários
     console.log(db.readUsers());
+    }
 };
 
 let db = new UserDB();
