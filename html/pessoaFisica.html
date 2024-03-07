@@ -40,7 +40,7 @@
 
             <div id="enderecoDiv">
                 <label for="cep">Cep</label>
-                <input type="text" id="cep" name="cep" placeholder="xxxxx-xxx" required>
+                <input type="text" id="cep" name="cep" placeholder="xxxxx-xxx" required onblur="pesquisacep(this.value)">
 
                 <label for="rua">Rua</label>
                 <input type="text" id="rua" name="rua" placeholder="Rua" required>
@@ -58,8 +58,9 @@
                 <input type="text" id="cidade" class="cidade" name="cidade" placeholder="Cidade" required>
 
                 <label for="estado">Estado</label>
-                <input type="text" id="estado" class="estado" name="estado" placeholder="Estado" required>
-                    <input type="button" value="Enviar" id="btnEnviar">
+                <input type="text" id="estado" class="estado" name="estado" placeholder="SP" size="2" required>
+
+                <input type="button" value="Enviar" id="btnEnviar">
             </div>
 
             <div class="toast-container">
