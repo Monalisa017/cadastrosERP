@@ -29,7 +29,8 @@ input[type="date"] {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
-input[type="submit"] {
+input[type="submit"],
+     [type="button"]  {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
@@ -44,3 +45,22 @@ input[type="submit"]:hover {
     text-align: left;
     color: antiquewhite;
 }
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  .toast {
+    background-color: #5cb85c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .show {
+    opacity: 1;
+  }
