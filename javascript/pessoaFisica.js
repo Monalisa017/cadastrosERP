@@ -33,6 +33,7 @@ class UserDB {
         let users = JSON.parse(localStorage.getItem(this.key)) || [];
         users.push(user);
         localStorage.setItem(this.key, JSON.stringify(users));
+        window.location.href = "usuarios.html"
     }
 
     // Lê todos os usuários
