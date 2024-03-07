@@ -21,19 +21,39 @@ document.getElementById('cpf').addEventListener('input', function (e) {
     e.target.value = valor;
 });
 
-  
+function esconderCamposEndereco() {
+    document.getElementById("enderecoDiv").style.display = "none";
+};
+
+function exibirEtapaEndereco() {
+    document.getElementById("btnProximoEndereco").onclick = function exibir() {
+        const nome = document.getElementById("name").value;
+        const dataNascimento = document.getElementById("dataNascimento").value;
+        const rg = document.getElementById("rg").value;
+        const cpf = document.getElementById("cpf").value;
+        const email = document.getElementById("email").value;
+        const telefone = document.getElementById("telefone").value;
+        if (!nome || !dataNascimento || !rg || !cpf || !email || !telefone) {
+            alert("Para prosseguir preencha corretamente todos os seus dados!")
+        } else {
+            document.getElementById("enderecoDiv").style.display = "";
+            document.getElementById("dadosPessoaisDiv").style.display = "none";
+        }
+    };
+};
+
 function showToast() {
     var toast = document.getElementById("toast");
     toast.textContent = "Usuário adicionado com sucesso!";
     toast.classList.add("show");
-    setTimeout(function(){
-      toast.classList.remove("show");
+    setTimeout(function () {
+        toast.classList.remove("show");
     }, 5000);
-    setTimeout(function(){
-    window.location.href = "usuarios.html";
-      }, 3000);
-        
-  }
+    setTimeout(function () {
+        window.location.href = "usuarios.html";
+    }, 3000);
+
+}
 
 // Simula um "Banco de Dados" com localStorage
 class UserDB {
@@ -88,16 +108,20 @@ document.getElementById("btnEnviar").onclick = function enviarRegistro() {
     const cpf = document.getElementById("cpf").value;
     const email = document.getElementById("email").value;
     const telefone = document.getElementById("telefone").value;
+    const cep = document.getElementById("cep").value;
+    const rua = document.getElementById("rua").value;
+    const numero = document.getElementById("numero").value;
+    const complemento = document.getElementById("complemento").value;
+    const bairro = document.getElementById("bairro").value;
+    const cidade = document.getElementById("cidade").value;
+    const estado = document.getElementById("estado").value;
 
-    if(!nome || !dataNascimento || !rg || !cpf || !email || !telefone){
-        alert("Para prosseguir preencha corretamente todos os seus dados!")
-    }else{
-        const usuario = { id: generateNextId(), nome: nome, dataNascimento: dataNascimento, rg: rg, cpf: cpf, email: email, telefone: telefone }
-    // Criar usuários
-    db.createUser(usuario);
-
-    // Ler usuários
-    console.log(db.readUsers());
+    if (!cep || !rua || !numero || !bairro || !cidade || !estado) {
+        alert("Para prosseguir preencha corretamente todos os dados do seu endereço!")
+    } else {
+        const usuario = { id: generateNextId(), nome: nome, dataNascimento: dataNascimento, rg: rg, cpf: cpf, email: email, telefone: telefone, cep: cep, rua: rua, numero: numero, complemento: complemento, bairro: bairro, cidade: cidade, estado: estado }
+        // Criar usuários
+        db.createUser(usuario);
     }
 };
 
@@ -111,4 +135,6 @@ db.deleteUser(2);
 
 // Ler usuários após atualização e deleção
 console.log(db.readUsers());
+
+window.onload = esconderCamposEndereco(); exibirEtapaEndereco();
 
