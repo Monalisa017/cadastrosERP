@@ -119,7 +119,7 @@ function showToast() {
         window.location.href = "usuarios.html";
     }, 3000);
 
-}
+};
 
 // Simula um "Banco de Dados" com localStorage
 class UserDB {
