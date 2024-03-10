@@ -77,7 +77,7 @@ function adicionarUsuarios() {
         listaUsuarios.appendChild(li)
         listaUsuarios.appendChild(div);
 
-        document.getElementById('visualizar').addEventListener('click', function(event) {
+        img.addEventListener('click', function(event) {
             const usuarios = db.readUsers();
         
             usuarios.forEach(usuario => {

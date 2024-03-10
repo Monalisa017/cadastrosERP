@@ -15,25 +15,27 @@
             <h1 class="subTitle">Visualizar usuário</h1>
         </header>
         <form>
+
             <div class="div1" id="div1">
-                <input type="text" id="nome">
-                <input type="text" id="dataNascimento">
-                <input type="text" id="rg">
-                <input type="text" placeholder="Input 4">
-                <input type="text" placeholder="Input 5">
+
+                <input type="text" id="nome" name="nome">
+
+                <input type="text" id="documento" name="documento">
+
+                <input type="text" id="rua">
+                <input type="text" id="numero">
+                <input type="text" id="complemento" placeholder="COMPLEMENTO">
+                <input type="text" id="bairro">
+                <input type="text" id="cidade">
+                <input type="text" id="estado" maxlength="2">
+                <input type="text" id="telefone">
+
+                <input type="button" value="Voltar" id="voltarBtn" class="voltarBtn">
             </div>
-            <div class="div2">
-                <input type="text" placeholder="Input 6">
-                <input type="text" placeholder="Input 7">
-                <input type="text" placeholder="Input 8">
-                <input type="text" placeholder="Input 9">
-                <input type="text" placeholder="Input 10">
-            </div>
-            <div class="div3">
-                <input type="button" value="Voltar" id="btnEnviar">
-            </div>
-        </div>
-       
+
+
+
+    </div>
     </form>
     <script src="./../javascript/visualizarUsuario.js"></script>
 </body>
