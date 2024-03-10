@@ -22,7 +22,7 @@ document.getElementById('cpf').addEventListener('input', function (e) {
 });
 
 function esconderCamposEndereco() {
-    document.getElementById("enderecoDiv").style.display = "nome";
+    document.getElementById("enderecoDiv").style.display = "none";
 };
 
 function exibirEtapaEndereco() {
@@ -119,7 +119,7 @@ function showToast() {
         window.location.href = "usuarios.html";
     }, 3000);
 
-}
+};
 
 // Simula um "Banco de Dados" com localStorage
 class UserDB {

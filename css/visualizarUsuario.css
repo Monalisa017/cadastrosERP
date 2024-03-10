@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 90%;
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+header {
+    width: auto;
+    background-color: rgb(2, 2, 95);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+header {
+    background-color: rgb(2, 2, 95);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+form {
+    display: flex;
+    justify-content: center;
+    margin:0;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 90%;
+    padding: 10px;
+    margin:0;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+input[type="submit"],
+     [type="button"]  {
+        display: flex;
+    justify-content: center;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.subTitle{
+    text-align: left;
+    color: antiquewhite;
+}
+.div3{
+    display: flex;
+    justify-content: center;
+}
+.voltarBtn{
+    width: auto;
+    margin: auto;
+    display: flex;
+}
+
+

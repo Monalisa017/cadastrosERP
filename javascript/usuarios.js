@@ -16,6 +16,15 @@ class UserDB {
         return JSON.parse(localStorage.getItem(this.key)) || [];
     }
 
+    updateUser(id, newUserDetails) {
+        let users = this.readUsers();
+        let userIndex = users.findIndex(user => user.id === id);
+        if (userIndex !== -1) {
+            users[userIndex] = { ...users[userIndex], ...newUserDetails };
+            localStorage.setItem(this.key, JSON.stringify(users));
+        }
+    }
+
 }
 
 let db = new UserDB();
@@ -25,7 +34,6 @@ function adicionarUsuarios() {
     const usuarios = [
         db.readUsers()
     ];
-    console.log(usuarios)
     const listaUsuarios = document.getElementById('lista-usuarios');
 
     // Limpa a lista antes de adicionar os usuários
@@ -58,6 +66,9 @@ function adicionarUsuarios() {
 
         const data = new Date(usuario.dataNascimento);
         li.textContent = `${usuario.nome}`;
+        li.id = `${usuario.id}`
+
+        console.log(`${usuario.id}`)
 
         div.appendChild(li);
         div.appendChild(img);
@@ -66,18 +77,31 @@ function adicionarUsuarios() {
         listaUsuarios.appendChild(li)
         listaUsuarios.appendChild(div);
 
-        img.onclick = function () {
-            alert("Pegando VISUALIZAR");
-        };
-        img2.onclick = function () {
-            alert("Pegando editar");
-        };
-        img3.onclick = function () {
-            alert("Pegando excluir");
-        };
-    });
-}
+        img.addEventListener('click', function(event) {
+            const usuarios = db.readUsers();
+        
+            usuarios.forEach(usuario => {
+                
+                    localStorage.setItem('usuarioSelecionado', JSON.stringify(usuario));
 
+            });
+            window.location.href = "visualizarUsuario.html"
+        });
+        
+            img2.onclick = function () {
+                alert("Pegando editar");
+                //upDateUser();
+            };
+            img3.onclick = function () {
+                alert("Pegando excluir");
+            };
+        });
+    }
+
+/*function upDateUser(){
+    db.updateUser(1, { id: 2, nome: 'João Atualizado', email: 'joaoatualizado@example.com' });
+    alert("Atualizado")
+}*/
 //${formatarData(data)} ${usuario.rg} ${usuario.cpf}  ${usuario.email} ${usuario.telefone}
 // Chama a função para adicionar os usuários quando a página carrega
 window.onload = adicionarUsuarios;
