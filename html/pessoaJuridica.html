@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastros Básicos</title>
+    <link rel="stylesheet" type="text/css" href="./../../CadastrosERP/css/pessoaJuridica.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="container">
+            <header>
+                <h1 class="subTitle">Pessoa jurídica</h1>
+            </header>
+            <div class="divGrid">
+                <label for="name">CNPJ</label>
+                <input type="text" id="cnpj" name="cnpj" placeholder="xx.xxx.xxx/xxxx-xx">
+
+                <label for="razaoSocial">Razão social</label>
+                <input type="text" id="razaoSocial" name="razaoSocial" placeholder="RAZAO SOCIAL" required>
+
+                <label for="economicaPrincipal">Código e descrição da atividade econômica principal</label>
+                <input type="text" id="economicaPrincipal" name="economicaPrincipal"
+                    placeholder="CÓDIGO E DESCRIÇÃO DA ATIVIDADE ECONÔMICA PRINCIPAL">
+
+                <label for="naturezaJurica">Código e descrição da natureza jurídica</label>
+                <input type="text" id="naturezaJuridica" class="naturezaJuridica" name="naturezaJuridica"
+                    placeholder="CÓDIGO E DESCRIÇÃO DA NATUREZA JURÍDICA" required>
+
+                    <label for="telefone">Celular</label>
+                    <input type="text" id="telefone" class="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx"
+                        required>
+
+                <label for="cep">Cep</label>
+                <input type="text" id="cep" name="cep" placeholder="xxxxx-xxx" required
+                    onblur="pesquisacep(this.value)">
+
+                <label for="rua">Endereço</label>
+                <input type="text" id="rua" name="rua" placeholder="Rua" required>
+
+                <label for="numero">Numero</label>
+                <input type="text" id="numero" name="numero" placeholder="Número" required>
+
+                <label for="complemento">Numero</label>
+                <input type="text" id="complemento" name="complemento" placeholder="Complemento">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" name="bairro" placeholder="Bairro" required>
+
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" class="cidade" name="cidade" placeholder="Cidade" required>
+
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" class="estado" name="estado" placeholder="SP" size="2" required>
+
+                <input type="button" value="Enviar" id="btnEnviar">
+
+                <div class="toast-container">
+                    <div id="toast" class="toast"></div>
+                </div>
+                </form>
+
+
+            </div>
+
+            <script src="./../javascript/pessoaJuridica.js"></script>
+</body>
+
+</html>
